@@ -1,0 +1,137 @@
+@import "../libs//variables.scss";
+
+.contribution-graph {
+  display: grid;
+  grid-template-columns: repeat(51, 22px);
+  grid-template-rows: repeat(7, 22px);
+  gap: 2px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.graph-cell {
+  width: 15px;
+  height: 15px;
+  background: #ededed;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+}
+.selected {
+  border: 2px solid rgba(0, 0, 0, 0.9);
+}
+.graph-box {
+  position: relative;
+  top: 18px;
+  left: 0;
+  width: 180px;
+  padding: 8px;
+  background-color: black;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 1;
+  img {
+    position: absolute;
+    width: 40px;
+    top: 53px;
+    left: 70px;
+  }
+  p {
+    text-align: center;
+  }
+  &__title {
+    text-align: center;
+    color: #7c7c7c;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.week-row {
+  display: flex;
+}
+
+.today-indicator {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.tooltip {
+  display: flex;
+  width: 340px;
+  position: relative;
+  &__count {
+    color: #fff;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__date {
+    position: absolute;
+    top: -60px;
+    left: 5%;
+    transform: translateX(-50%);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: black;
+    color: #fff;
+  }
+  &__corner {
+    position: absolute;
+    width: 20px;
+    top: -13px;
+    left: 2%;
+    transform: translateX(-50%);
+  }
+}
+.months-row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 53px;
+  position: absolute;
+  top: 9%;
+}
+.month-cell {
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #959494;
+}
+.no-contributions {
+  background-color: #ebedf0;
+}
+
+.color-1-9 {
+  background-color: $primary-color;
+}
+
+.color-10-19 {
+  background-color: $secondary-color;
+}
+
+.color-20-29 {
+  background-color: $light-dark-color;
+}
+
+.color-30-plus {
+  background-color: $dark-color;
+}
